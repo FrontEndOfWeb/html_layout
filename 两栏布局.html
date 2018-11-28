@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+        }
+        html,body{
+            height: 100%
+        }
+        /* .div{
+            height: 100%;
+            float: left
+        }
+        .div_left{
+            background-color: orange;
+            width: 30px
+        }
+        .div_right{
+            background-color: skyblue;
+            width: calc(100% - 30px)
+        } */
+        .div{
+            height: 100%
+        }
+        .div_left{
+            float: left;
+            width: 100px;
+            background-color: orange;
+        }
+        .div_right{
+            background-color: skyblue;
+            overflow: auto   /*开启bfc。元素依然忽视浮动元素，但元素的左边界会受浮动元素影响，即影响了盒子的宽度*/         
+        }
+    </style>
+</head>
+<body>
+    <div class="div div_left"></div>
+    <div class="div div_right"></div>
+</body>
+</html>

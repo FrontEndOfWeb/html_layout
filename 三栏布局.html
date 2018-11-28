@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            min-width: 600px;
+        }
+
+        .section_title {
+            color: red;
+            font-size: 20px;
+            text-align: center
+        }
+
+        .div {
+            height: 200px
+        }
+
+        /* 圣杯布局 */
+        .container1 {
+            overflow: hidden;
+            padding-left: 200px;
+            padding-right: 200px;
+            /* overflow: hidden */
+            /* 可以不用 */
+        }
+
+        .container1 .center {
+            width: 100%;
+            background-color: skyblue;
+            float: left
+        }
+
+        .container1 .left {
+            width: 200px;
+            background-color: orange;
+            float: left;
+            /* margin-top: -200px;    
+                position: relative;
+                left: -200px */
+            margin-left: -100%;
+            position: relative;
+            left: -200px
+        }
+
+        .container1 .right {
+            width: 200px;
+            background-color: yellowgreen;
+            float: left;
+            /* margin-top: -200px;
+                position: relative;
+                left: 100% */
+            margin-left: -200px;
+            position: relative;
+            right: -200px
+        }
+
+        /* 
+                说明：
+                    注释掉的代码 -> 用margin-top将元素调整到一行，再用position：relative偏离leftBox与rightBox；
+                    现在使用的代码 -> 为参考链接中的写法，解释见参考链接对应部分（用margin-left将元素调整到一行，再偏离）
+            
+             */
+
+        /* 双飞翼布局 */
+        .container2 {
+            overflow: hidden;
+        }
+
+        .container2 .center_wrapper {
+            float: left;
+            width: 100%;
+            background-color: skyblue;
+        }
+
+        .container2 .center {
+            margin-left: 200px;
+            margin-right: 200px
+        }
+
+        .container2 .left {
+            float: left;
+            width: 200px;
+            background-color: orange;
+            margin-left: -100%;
+        }
+
+        .container2 .right {
+            float: left;
+            width: 200px;
+            background-color: yellowgreen;
+            margin-left: -200px
+        }
+
+        /* tips */
+        .tips{
+            color: rgb(90, 79, 79);
+            margin-top: 10px
+        }
+        .tips .full{
+            background-color: rgb(110, 110, 209);
+            color: #fff;
+            margin-left: 26px;
+            line-height: 26px;
+            /* width: 100% */
+        }
+    </style>
+</head>
+
+<body>
+    <p class="section_title">圣杯布局</p>
+    <div class="container1">
+        <div class="div center">center</div>
+        <div class="div left">left</div>
+        <div class="div right">right</div>
+    </div>
+
+    <p class="section_title">双飞翼布局</p>
+    <div class="container2">
+        <div class="center_wrapper">
+            <div class="div center">center</div>
+        </div>
+        <div class="div left">left</div>
+        <div class="div right">right</div>
+    </div>
+
+    <div class="tips">
+        <div>tips:</div>
+        <div class="full">
+                双飞翼布局 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                1.块级元素不为其设置宽度时，宽度默认为容器元素的100%。再设置margin-left为26px,宽度会被减小26px<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                2.假如为此div（本例中<em>div[class="full"]</em>）设置宽100%，再设置<em>margin-left:26px</em>,会出现横向滚动条
+        </div>
+    </div>
+</body>
+
+</html>
